@@ -6,7 +6,6 @@ import BeerList from './BeerList.jsx';
 
 export default React.createClass({
   propTypes: {
-    tasks: PropTypes.array.isRequired,
     beers: PropTypes.array.isRequired,
     onAddTask: PropTypes.func.isRequired,
     onClear: PropTypes.func.isRequired
@@ -14,13 +13,12 @@ export default React.createClass({
 
   getDefaultProps() {
     return {
-      tasks: [],
-      beers: []
+      beers: [{brand:'Bud'},{brand:'Sierra'}]
     }
   },
 
   render() {
-    let {onAddTask, onClear, tasks} = this.props;
+    let {onAddTask, onClear, beers} = this.props;
     return (
       <div className="container">
         <Jumbotron>
@@ -30,7 +28,7 @@ export default React.createClass({
           </p>
         </Jumbotron>
 
-        <BeerList beers={tasks}/>
+        <BeerList beers={beers}/>
 
         <Button onClick={onAddTask} bsStyle="primary">Add New</Button>
         <Button onClick={onClear} bsStyle="danger">Clear List</Button>

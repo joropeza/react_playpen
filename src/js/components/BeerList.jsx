@@ -6,7 +6,7 @@ import Beer from './Beer.jsx';
 export default React.createClass({
   getDefaultProps() {
     return {
-      tasks: [{brand:'Coors'},{brand:'Sierra Nevada'},{brand:'21st Ammendment'}]
+      beers: [{brand:'Coors'},{brand:'Sierra Nevada'},{brand:'21st Ammendment'}]
     };
   },
 
@@ -14,10 +14,10 @@ export default React.createClass({
   },
 
   render() {
-    let {tasks} = this.props;
+    let {beers} = this.props;
     return (
       <ListGroup>
-          {tasks.map(beer =>
+          {beers.map(beer =>
             <Beer beer={beer} />
           )}
         </ListGroup>
